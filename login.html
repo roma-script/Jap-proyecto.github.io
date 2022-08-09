@@ -17,27 +17,37 @@
 </head>
 
 <body>
+<div class="login">
+  <img src="img/login.png">
+</div> 
   <main id="main-holder">
     <h1 id="login-header">Inicio de sesión</h1>
-    
-    <div id="login-error-msg-holder">
-      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
-    </div>
-    
-    <form id="login-form">
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-      <input type="submit" value="Login" id="login-form-submit">
-    </form>
+       
+   
+      <p>Email</p>
+      <input type="text" name="usuario" id="usuario" class="login-form-field" placeholder="Correo electónico" required>
+      <br>
+      <br>
+      <p>Contraseña</p>
+      <input type="password" name="contraseña" id="contraseña" class="login-form-field" placeholder="Contraseña" required>
+      <br>
+      <br>
+      <div id="submit">
+        <input type="submit" value="Ingresar" id="login-form-submit" onclick="submit ()">
+      </div>
+   
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
-        2022</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
+      </div>
+      <div class="leyenda"> 
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+          2022</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+      
   </footer>
   <script src="js/login.js"></script>
 </body>
