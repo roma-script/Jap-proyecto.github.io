@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function(e){
-
-});
     
+});
+
+
 function DataLogin() {
   var DataLogin = [];
 }
 
-function validar() {
-
-  // Obtener valores 
-  var email = document.getElementById("usuario").value;
-  var contraseña = document.getElementById("contraseña").value;
-  localStorage.setItem("login-form-submit", email);
-
+  
+  
+  document.getElementById().addEventListener("click", function () {
+    var usuario = document.getElementById("usuario").value;
+    var contraseña = document.getElementById('contraseña').value;
+   
   // Validacion
-  if (email === "") {
+  if (usuario === "") {
     alert("Debes ingresar un usuario");
     return false;
   }
@@ -30,6 +30,7 @@ function validar() {
   }
 
   else {
-    alert("Usuario creado con exito");
+    alert("Usuario creado con exito")
+    window.location.replace("inicio.html")
   }
-}
+});
