@@ -220,12 +220,18 @@ margin-bottom:0px;
 
 .leyenda {
   text-align: left;
-  margin-left: -450px;
+  margin-left: -400px;
   margin-top: 50px; 
 }
 
-.container {
-  text-align: left;
-  margin-right: -450px;
+.volver {
+  text-align: right;
+  margin-right: -350px;
+  margin-top: 50px; 
+}
+
+.encabezado{
+  font-family: 'Raleway', serif !important;
+  text-align: center;
   margin-top: 50px; 
 }
