@@ -1,5 +1,5 @@
 
-function redirigir() {
+function validar() {
   var usuario = document.getElementById("usuario").value;
      var contraseña = document.getElementById('contraseña').value;
     
@@ -16,5 +16,6 @@ function redirigir() {
    }
    
    alert("Usuario creado con éxito")
+   setTimeout("validar()", 10000);
    window.location.href = "inicio.html";
   }
