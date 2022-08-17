@@ -1,5 +1,6 @@
-
-function validar() {
+document.getElementById("login-form-submit").addEventListener("click",
+  
+function redirigir() {
   var usuario = document.getElementById("usuario").value;
      var contraseña = document.getElementById('contraseña').value;
     
@@ -14,8 +15,9 @@ function validar() {
      alert("La contraseña debe tener más de 6 caracteres")
      return false;
    }
-   
+   else{
    alert("Usuario creado con éxito")
-   setTimeout("validar()", 1000);
    window.location.href = "inicio.html";
   }
+}
+);
