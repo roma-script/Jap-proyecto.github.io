@@ -16,6 +16,6 @@ function validar() {
    }
    
    alert("Usuario creado con éxito")
-   setTimeout("validar()", 10000);
+   setTimeout("validar()", 1000);
    window.location.href = "inicio.html";
   }
