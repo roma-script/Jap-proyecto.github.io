@@ -11,7 +11,7 @@ function redirigir() {
    } else if (contraseña === "") {
      alert("Debes ingresar una contraseña");
      return false;
-   } else if (contraseña.length < 6) {
+   } else if (contraseña.length < 7) {
      alert("La contraseña debe tener más de 6 caracteres")
      return false;
    }   else {
