@@ -14,10 +14,8 @@ function redirigir() {
    } else if (contraseña.length < 6) {
      alert("La contraseña debe tener más de 6 caracteres")
      return false;
-   }
-   else{
+   }   else {
    alert("Usuario creado con éxito")
    window.location.href = "inicio.html";
   }
-}
-);
+});
