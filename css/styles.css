@@ -207,10 +207,11 @@ img {
 .login {
 margin-left: auto;
 margin-right: auto;
-height: 400px;
-width: 400px;
+height: 350px;
+width: 350px;
 margin-bottom:0px;
 }
+
 #login-form-submit
 {
   background-color: #0087F7;
@@ -221,13 +222,13 @@ margin-bottom:0px;
 .leyenda {
   text-align: left;
   margin-left: -400px;
-  margin-top: 50px; 
+  margin-top: 10px; 
 }
 
-.volver {
+#volver {
   text-align: right;
-  margin-right: -350px;
-  margin-top: 50px; 
+  margin-right: -400px;
+  margin-top: 20px; 
 }
 
 .encabezado{
@@ -237,6 +238,42 @@ margin-bottom:0px;
 }
 
 #cat-list-container{
-  margin-left: 100px;
+  width: 70%;
+  margin-top: 10px; 
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+#login-header {
+  margin-top: 5px; 
+  text-align: center;
+ 
+}
+
+.was-validated {
   width: 80%;
+  margin-left: 35px;
+  align-content: center;
+}
+
+#searchForm {
+  width: 80%;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+#buscador {
+  width: 80%;
+  margin: 0 auto;
+
+}
+ 
+#botones {
+  width: 30%;
+  margin: right;
+
+}
+
+#precio {
+  width: 30%;
+  margin: auto;
 }

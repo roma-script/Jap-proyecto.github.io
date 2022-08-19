@@ -90,6 +90,30 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/init.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCdKoIvjxnn8txOtvpYAs-Nkxtgv9dXPGo",
+      authDomain: "jap-proyecto-6994c.firebaseapp.com",
+      projectId: "jap-proyecto-6994c",
+      storageBucket: "jap-proyecto-6994c.appspot.com",
+      messagingSenderId: "954051129693",
+      appId: "1:954051129693:web:f2b56068da061a09bc78b4",
+      measurementId: "G-9ZYLGJS2RH"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 </body>
+
 
 </html>
