@@ -34,7 +34,6 @@ function sortProducts(criteria, array){
 
     return result;
 }
-
 function setCatID(id) {
     localStorage.setItem("catID", id);
     window.location = "products.html"
@@ -115,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         minCount = undefined;
         maxCount = undefined;
 
-        showCategoriesList();
+        showProductsList();
     });
 
     document.getElementById("rangeFilterCount").addEventListener("click", function(){

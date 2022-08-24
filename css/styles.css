@@ -197,6 +197,7 @@ a.custom-card:hover {
   margin-left: 500px;
   margin-right: 500px;
   margin-top:-200px;
+  width:fit-content;
 }
 
 img {
@@ -225,10 +226,9 @@ margin-bottom:0px;
   margin-top: 10px; 
 }
 
-#volver {
-  text-align: right;
-  margin-right: -400px;
-  margin-top: 20px; 
+.float-end {
+  margin-right: -300px;
+ 
 }
 
 .encabezado{
@@ -275,5 +275,8 @@ margin-bottom:0px;
 
 #precio {
   width: 30%;
+  margin: auto;
+}
+.text-muted {
   margin: auto;
 }

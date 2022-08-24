@@ -44,3 +44,5 @@ let getJSONData = function(url){
 document.addEventListener("DOMContentLoaded", function(e){
 });
 
+var loginUser= localStorage.getItem("dataLogin");
+document.getElementById("botonUser").innerHTML = loginUser;

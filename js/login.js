@@ -1,8 +1,22 @@
+document.addEventListener("DOMContentLoaded", function(e){
+
+
+    
+});
+
+function DataLogin() {
+  var DataLogin = [];
+}
+
+
 document.getElementById("login-form-submit").addEventListener("click",
-  
+ 
+
+
 function redirigir() {
   var usuario = document.getElementById("usuario").value;
      var contraseña = document.getElementById('contraseña').value;
+     localStorage.setItem("dataLogin", usuario);
 
    // Validar usuario
    if (usuario === "") { 
@@ -19,6 +33,7 @@ function redirigir() {
    window.location.href = "inicio.html";
   }
 });
+
 
 /*
 const form = document.forms['was-validated'];
