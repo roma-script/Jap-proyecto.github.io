@@ -5,6 +5,9 @@ let currentProductsArray = [];
 let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
+let id = localStorage.getItem('catID')
+var textoBuscar = undefined;
+
 
 function sortProducts(criteria, array){
     let result = [];
@@ -34,10 +37,6 @@ function sortProducts(criteria, array){
 
     return result;
 }
-function setCatID(id) {
-    localStorage.setItem("catID", id);
-    window.location = "products.html"
-}
 
 function showProductsList(){
 
@@ -55,8 +54,8 @@ function showProductsList(){
                         <img src="${product.image}" alt="${product.description}" class="img-thumbnail">
                     </div>
                     <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${product.name}</h4>
+                        <div class="d-flex w-100 justify-conten2-t-between">
+                            <h4 class="mb-1">${product.name} - ${product.currency} ${product.cost} </h4> 
                             <small class="text-muted">${product.soldCount} artículos</small>
                         </div>
                         <p class="mb-1">${product.description}</p>
@@ -87,11 +86,11 @@ function sortAndShowProducts(sortCriteria, productsArray){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
+    getJSONData(PRODUCTS_URL+localStorage.getItem('catID')+EXT_TYPE).then(function(resultObj){
         if (resultObj.status === "ok"){
             currentProductsArray = resultObj.data.products
             showProductsList()
-            //sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
+            sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }
     });
 
@@ -118,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
 
     document.getElementById("rangeFilterCount").addEventListener("click", function(){
-        //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
+        //Obtengo el mínimo y máximo de los intervalos para filtrar por precio
         //de productos por categoría.
         minCount = document.getElementById("rangeFilterCountMin").value;
         maxCount = document.getElementById("rangeFilterCountMax").value;
@@ -138,5 +137,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
 
         showProductsList();
-    });
+         });
+
+            document.getElementById("searchForm").addEventListener("keyup", function () {
+
+                textoBuscar = document.getElementById("searchForm").value;
+                showProductsList();
+        
+            });
 });
