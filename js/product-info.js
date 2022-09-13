@@ -1,13 +1,14 @@
 var product = {};
-let listado = [];
 let id = localStorage.getItem('catID');
 
 
 function showImages(array) {
 
- 
-    for (let images for listado.images) 
-      
+    let htmlContentToAppend = "";
+   
+    for (let i = 0; i < array.length; i++) {
+        let imageSrc = array[i];
+
     }
     document.getElementById("productImages").innerHTML = htmlContentToAppend;
 }
@@ -36,16 +37,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
             productCountHTML.innerHTML = category.soldCount;
             productCriteriaHTML.innerHTML = category.category;
 
-            //Muestro las imagenes en forma de galería
-            showImagesGallery(category.images);
+            
+            showImages(category.images);
 
 
 
             getJSONData(PRODUCTS_URL+localStorage.getItem('catID')+EXT_TYPE.then(function (resultProd) {
                 if (resultProd.status === "ok") {
 
-                    related = resultProd.data;
-                    showRelatedImages(related);
+                    category = resultObj.data;
                 }
             })
             );
