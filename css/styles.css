@@ -312,5 +312,8 @@ dt {
     border-color: #0087F7;
     padding: 8px;
     }
+    #stars {
+      width: 10%;  
+    }
     
   
