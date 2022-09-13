@@ -2,16 +2,17 @@ var product = {};
 let id = localStorage.getItem('catID');
 
 
-function showImages(array) {
+function ShowProduct(array) {
 
     let htmlContentToAppend = "";
    
     for (let i = 0; i < array.length; i++) {
-        let imageSrc = array[i];
-
+        let product = array[i];
     }
+    
     document.getElementById("productImages").innerHTML = htmlContentToAppend;
 }
+
 
 
 
@@ -37,29 +38,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
             productCountHTML.innerHTML = category.soldCount;
             productCriteriaHTML.innerHTML = category.category;
 
-            
+           
             showImages(category.images);
 
 
 
-            getJSONData(PRODUCTS_URL+localStorage.getItem('catID')+EXT_TYPE.then(function (resultProd) {
-                if (resultProd.status === "ok") {
-
-                    category = resultObj.data;
-                }
-            })
-            );
-        }
-    });
-
-    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultComm) {
+    getJSONData(PRODUCT_INFO_COMMENTS_URL+localStorage.getItem('catID')+EXT_TYPE).then(function (resultComm) {
         if (resultComm.status === "ok") {
 
-            nroComentario = resultComm.data;
-            showRelatedComments(nroComentario);
+            comentarios = resultComm.data;
+            showRelatedComments(comentarios);
         }
     });
 
-
-
-})
+        }
+    })})
