@@ -2,12 +2,23 @@ var product = {};
 let id = localStorage.getItem('catID');
 
 
-function ShowProduct(array) {
+function showImages(array) {
 
     let htmlContentToAppend = "";
-   
+    var activar;
+
     for (let i = 0; i < array.length; i++) {
-        let product = array[i];
+        let imageSrc = array[i];
+
+
+            if (i==0) activar = "active";
+
+            else activar ="";
+
+        htmlContentToAppend += ` <div class="col" ` +activar+ ` " >
+        <img src="` + imageSrc + `" class="img-thumbnail" alt="...">
+        </div> `
+       
     }
     
     document.getElementById("productImages").innerHTML = htmlContentToAppend;

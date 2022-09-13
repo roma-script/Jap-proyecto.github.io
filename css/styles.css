@@ -315,5 +315,10 @@ dt {
     #stars {
       width: 10%;  
     }
-    
+    #productImages  {
+      width: 20%;  
+      content: "";
+      clear: both;
+      display: table;
+    }
   
