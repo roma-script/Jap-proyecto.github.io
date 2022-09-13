@@ -31,17 +31,83 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="my-profile.html" id="botonUser">  </a>
+            <a class="nav-link" href="my-profile.html" id="botonUser"> </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <h3 id="categoryName"></h3>
-     
+    <h3 id="categoryName"></h3>
+    <hr class="my-3">
+    <dl>
+      <dt>Descripción</dt>
+      <dd>
+        <p id="categoryDescription"></p>
+      </dd>
 
+      <dt>Categoría</dt>
+      <dd>
+        <p id="productCriteria"></p>
+      </dd>
+
+      <dt>Cantidad de artículos vendidos</dt>
+      <dd>
+        <p id="productCount"></p>
+      </dd>
+
+      <dt>Imágenes ilustrativas</dt>
+      <dd>
+        <p id="productImages"></p>
+      </dd>
+
+
+      
+  </div>
+  </dd>
+  </dl>
+
+
+  <dt>Comentarios</dt>
+    <dd>
+
+    <p id="comentario"></p>
+  </dd>
+  </dl>
+
+
+  <dt> <i class="icon-pencil"></i> Comentar</dt> 
+  <dd>
+    <p> Déjanos tu opinión</p>
+  </dd>
+  <dd>
+
+    <form action="" id="formulariocomentar" onsubmit="return enviarComentario(this)">
+      <textarea style="border:#0087F7; border-width:2px; border-style:solid;" name="message" rows="10" cols="76" placeholder="Escribe un comentario"></textarea>
+      <br>
+      <p>Tu puntuación</p>
+      <select name="stars" id="stars">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <br>
+      <br>
+
+      <input class="btn btn-primary" type="submit" />
+    </form>
+    </div>
+  </dd>
+  </dl>
+  </div>
+
+
+</main>
+</footer>
+<div id="spinner-wrapper">
     </div>
   </main>
   <footer class="text-muted">

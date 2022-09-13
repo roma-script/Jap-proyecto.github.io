@@ -285,3 +285,57 @@ margin-bottom:0px;
   margin-right: 5%;
 }
 
+#categoryName {
+  font-family: 'Raleway', serif !important;
+  text-align: center;
+  margin-top: 50px; 
+}
+dt {
+  font-family: 'Raleway', serif !important; 
+  margin: auto;
+  margin-left: 50px;
+  }
+
+  dd {
+    font-family: 'Raleway', serif !important; 
+    margin: auto;
+    margin-left: 60px;
+    }
+ #productImagesGallery {
+  width: 70%;
+   }
+  
+   #verprod {
+    font-family: 'Raleway', serif !important; 
+    margin: auto;
+    margin-left: 600px;
+     }
+    #formulariocomentario {
+    font-family: 'Raleway', serif !important; 
+    border-radius: 2px;
+    border-color: #0087F7;
+    padding: 8px;
+    }
+    .carousel-control-prev-icon {
+      position: absolute;
+      bottom: 250px;
+      left: 20px;
+      outline: black;
+      background-color: #0087F7;
+      background-size: 100%, 100%;
+      border-radius: 50%;
+      border: 1px  #0087F7;
+  }
+  
+  .carousel-control-next-icon {
+      position: absolute;
+      bottom: 250px;
+      right: 400px;
+      color : #0087F7;
+      outline: black;
+      background-color: #0087F7;
+      background-size: 100%, 100%;
+      border-radius: 50%;
+      border: 1px  #0087F7;
+  }
+  
