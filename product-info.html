@@ -60,22 +60,18 @@
 
       <dt>Imágenes ilustrativas</dt>
       <dd>
-        <p id="productImages"></p>
+        <div></div>
+        <div class="row" id="productImages"></p>
+        </div>
       </dd>
-    <div class="col">
-      
-   </div>
-
-      
-  </div>
-  </dd>
-  </dl>
+     </dl>
 
 
   <dt>Comentarios</dt>
     <dd>
-
-    <p id="comentario"></p>
+          <p id="comentario"></p>
+  </div>
+</div>
   </dd>
   </dl>
 
@@ -87,10 +83,10 @@
   <dd>
 
     <form action="" id="formulariocomentar" onsubmit="return enviarComentario(this)">
-      <textarea style="border:#0087F7; border-width:2px; border-style:solid;" name="message" rows="10" cols="76" placeholder="Escribe un comentario"></textarea>
+      <textarea style="border:#0087F7; border-width:2px; border-style:solid;" name="opinion" rows="10" cols="76" placeholder="Escribe un comentario"></textarea>
       <br>
       <p>Tu puntuación</p>
-      <select name="stars" id="stars">
+      <select name="estrellitas" id="estrellitas">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -101,7 +97,7 @@
       <br>
       <br>
 
-      <input class="btn btn-primary" type="submit" />
+      <input class="btn btn-primary" type="submit" onclick="submit" />
     </form>
     </div>
   </dd>

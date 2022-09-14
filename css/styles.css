@@ -320,5 +320,10 @@ dt {
       content: "";
       clear: both;
       display: table;
+      margin-bottom: -80px;
     }
   
+#comentario {
+  margin-top: 5px;
+  width: 50%;  
+}

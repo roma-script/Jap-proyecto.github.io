@@ -1,32 +1,63 @@
 var product = {};
 let id = localStorage.getItem('catID');
 
-
 function showImages(array) {
 
     let htmlContentToAppend = "";
-    var activar;
-
+    
     for (let i = 0; i < array.length; i++) {
         let imageSrc = array[i];
 
 
-            if (i==0) activar = "active";
-
-            else activar ="";
-
-        htmlContentToAppend += ` <div class="col" ` +activar+ ` " >
-        <img src="` + imageSrc + `" class="img-thumbnail" alt="...">
-        </div> `
+        htmlContentToAppend += ` <div class="row" >
+        <div class="d-block mb-4 h-100">
+        <img src="` + imageSrc + `" class="img-fluid img-thumbnail" alt="" >
+         `
        
     }
     
     document.getElementById("productImages").innerHTML = htmlContentToAppend;
 }
+function mostrarEstrellitas(nroEstrellasMarcadas) {
+    var estrellitas = "";
 
+    for (let i = 0; i < 5; i++) {
+        if (i < nroEstrellasMarcadas) {
+            estrellitas += `<span class="fa fa-star checked"></span>`;
+        } else {
+            estrellitas += `<span class="fa fa-star"></span>`;
+        }
+    }
 
+    return estrellitas;
+}
 
+function showComments(array) {
+    htmlContentToAppend = "";
 
+    for (let i = 0; i < array.length; i++) {
+        let nroComentario = array[i];
+
+        htmlContentToAppend += `<div class="card">  <div class="card-body"> ` + nroComentario.user + `> - ` + nroComentario.dateTime + ` - ` + mostrarEstrellitas(nroComentario.score) + ` <br> ` + nroComentario.description + `  </div> `
+
+    }
+
+    document.getElementById("comentario").innerHTML = htmlContentToAppend;
+
+}
+
+function enviarComentario(e) {
+    var comentario = {
+        score: e.estrellitas.value,
+        description: e.opinion.value,
+        user: localStorage.getItem("dataLogin"),
+        dateTime: new Date()
+    }
+
+    nroComentario.push(comentario)
+    showComments(nroComentario);
+    return false;
+}
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -58,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (resultComm.status === "ok") {
 
             comentarios = resultComm.data;
-            showRelatedComments(comentarios);
+            showComments(comentarios);
         }
     });
 
