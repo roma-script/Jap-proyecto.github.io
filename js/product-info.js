@@ -1,5 +1,6 @@
 var product = {};
 let id = localStorage.getItem('catID');
+let comentarios;
 
 function showImages(array) {
 
@@ -9,13 +10,13 @@ function showImages(array) {
         let imageSrc = array[i];
 
 
-        htmlContentToAppend += ` <div class="row" >
-        <div class="d-block mb-4 h-100">
+        htmlContentToAppend += `
+        <div class="col d-block mb-4 h-100">
         <img src="` + imageSrc + `" class="img-fluid img-thumbnail" alt="" >
+</div>
          `
        
     }
-    
     document.getElementById("productImages").innerHTML = htmlContentToAppend;
 }
 function mostrarEstrellitas(nroEstrellasMarcadas) {
@@ -38,7 +39,10 @@ function showComments(array) {
     for (let i = 0; i < array.length; i++) {
         let nroComentario = array[i];
 
-        htmlContentToAppend += `<div class="card">  <div class="card-body"> ` + nroComentario.user + `> - ` + nroComentario.dateTime + ` - ` + mostrarEstrellitas(nroComentario.score) + ` <br> ` + nroComentario.description + `  </div> `
+        htmlContentToAppend += `<div class="card">  <div class="card-body"> ` +
+         nroComentario.user + `> - ` + nroComentario.dateTime + 
+         ` - ` + mostrarEstrellitas(nroComentario.score) + ` <br> ` 
+         + nroComentario.description + `  </div> `
 
     }
 
@@ -47,6 +51,7 @@ function showComments(array) {
 }
 
 function enviarComentario(e) {
+    console.log("ok")
     var comentario = {
         score: e.estrellitas.value,
         description: e.opinion.value,
@@ -54,8 +59,8 @@ function enviarComentario(e) {
         dateTime: new Date()
     }
 
-    nroComentario.push(comentario)
-    showComments(nroComentario);
+    comentario.push(comentario)
+    showComments(comentarios);
     return false;
 }
 
