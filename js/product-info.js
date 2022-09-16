@@ -39,7 +39,7 @@ function showComments(array) {
     for (let i = 0; i < array.length; i++) {
         let nroComentario = array[i];
 
-        htmlContentToAppend += `<div class="card">  <div class="card-body"> ` +
+           htmlContentToAppend += `<div class="card">  <div class="card-body"> ` +
          nroComentario.user + `> - ` + nroComentario.dateTime + 
          ` - ` + mostrarEstrellitas(nroComentario.score) + ` <br> ` 
          + nroComentario.description + `  </div> `
@@ -50,8 +50,9 @@ function showComments(array) {
 
 }
 
+
 function enviarComentario(e) {
-    console.log("ok")
+       console.log("ok")
     var comentario = {
         score: e.estrellitas.value,
         description: e.opinion.value,
@@ -59,7 +60,7 @@ function enviarComentario(e) {
         dateTime: new Date()
     }
 
-    comentario.push(comentario)
+    comentarios.push(comentario)
     showComments(comentarios);
     return false;
 }

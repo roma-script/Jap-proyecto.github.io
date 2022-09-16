@@ -37,10 +37,10 @@
       </div>
     </div>
   </nav>
-  <main>
+  <main style="background-color: rgba(255, 255, 255, 0.5)">
     
     <h3 id="categoryName"></h3>
-    <hr class="my-3">
+    <hr class="my-3" style="background-color: #0087F7">
     <dl>
       
       <dt> Descripción</dt>
@@ -98,6 +98,14 @@
       <br>
 
       <input class="btn btn-primary" type="submit" onclick="submit" />
+      <script>
+        document.addEventListener('DOMContentLoaded', function(){
+          let formulario = document.getElementById('formulariocomentar');
+          formulario.addEventListener('submit', function() {
+            formulario.reset();
+          });
+        });
+      </script>
     </form>
     </div>
   </dd>
