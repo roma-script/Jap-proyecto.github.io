@@ -39,7 +39,7 @@
   </nav>
   <main style="background-color: rgba(255, 255, 255, 0.5)">
     
-    <h3 id="categoryName"></h3>
+    <h2 style="font-weight: bold;" id="categoryName"></h2>
     <hr class="my-3" style="background-color: #0087F7">
     <dl>
       
@@ -99,20 +99,22 @@
 
       <input class="btn btn-primary" type="submit" onclick="submit" />
       <script>
-        document.addEventListener('DOMContentLoaded', function(){
-          let formulario = document.getElementById('formulariocomentar');
-          formulario.addEventListener('submit', function() {
-            formulario.reset();
-          });
-        });
-      </script>
+  document.addEventListener('DOMContentLoaded', function(){
+    let formulario = document.getElementById('formulariocomentar');
+    formulario.addEventListener('submit', function() {
+      formulario.reset();
+    });
+  });
+</script>
     </form>
     </div>
   </dd>
   </dl>
   </div>
+  <form>
+  <a class="btn btn-primary"  onclick="window.location.href='categories.html'" style="  margin-left: 600px">  Volver a Categorías </a>
 
-
+</form>
 </main>
 </footer>
 <div id="spinner-wrapper">

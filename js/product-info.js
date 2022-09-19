@@ -1,6 +1,11 @@
 var product = {};
-let id = localStorage.getItem('catID');
+let idProd = localStorage.getItem('catID');
 let comentarios;
+
+function setCatID(id) {
+    localStorage.setItem("catID", id);
+    window.location = "products.html"
+}
 
 function showImages(array) {
 
@@ -53,11 +58,12 @@ function showComments(array) {
 
 function enviarComentario(e) {
        console.log("ok")
+      
     var comentario = {
         score: e.estrellitas.value,
         description: e.opinion.value,
         user: localStorage.getItem("dataLogin"),
-        dateTime: new Date()
+        dateTime:  new Date().toISOString().replace('T', ' ').split('.')[0].replace('Z', '')
     }
 
     comentarios.push(comentario)

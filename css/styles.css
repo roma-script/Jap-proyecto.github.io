@@ -269,7 +269,7 @@ margin-bottom:0px;
   margin-bottom: 20px;
 }
 #buscador {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 
 }
@@ -330,4 +330,10 @@ dt {
 #comentario {
   margin-top: 5px;
   width: 50%;  
+}
+
+.Volver {
+  font-family: 'Raleway', serif !important; 
+  margin: auto;
+  margin-left: 500px;
 }
