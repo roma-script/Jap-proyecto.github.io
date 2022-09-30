@@ -1,11 +1,11 @@
-const ORDER_ASC_BY_PRICE = "Ascendente";
-const ORDER_DESC_BY_PRICE = "Descendente";
+const ORDER_ASC_BY_PRICE = "sortAsc";
+const ORDER_DESC_BY_PRICE = "sortDesc";
 const ORDER_BY_PROD_COUNT = "Cant.";
 let currentProductsArray = [];
 let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
-let id = localStorage.getItem('catID')
+let id1 = localStorage.getItem('catID')
 var buscar = undefined;
 
 
@@ -38,8 +38,8 @@ function sortProducts(criteria, array){
 
     return result;
 }
-function setCatID(id) {
-    localStorage.setItem("catID", id);
+function setCatID(id1) {
+    localStorage.setItem("catID", id1);
     window.location = "product-info.html"
 }
 

@@ -1,29 +1,40 @@
 var product = {};
-let idProd = localStorage.getItem('catID');
+let id2 = localStorage.getItem('catID');
 let comentarios;
 
-function setCatID(id) {
-    localStorage.setItem("catID", id);
+
+
+function getCatID(id2) {
+    localStorage.getItem("prodID", id2);
     window.location = "products.html"
 }
+function setCatID(prodID) {
+    localStorage.setItem("catID", prodID);
+    window.location = "products-info.html"
+}
+
 
 function showImages(array) {
 
     let htmlContentToAppend = "";
-    
+    var activar;
+
     for (let i = 0; i < array.length; i++) {
         let imageSrc = array[i];
 
 
-        htmlContentToAppend += `
-        <div class="col d-block mb-4 h-100">
-        <img src="` + imageSrc + `" class="img-fluid img-thumbnail" alt="" >
-</div>
-         `
+            if (i==0) activar = "active";
+
+            else activar ="";
+
+        htmlContentToAppend += ` <div class="carousel-item ` +activar+ ` " >
+        <img src="` + imageSrc + `" class="d-block w-100" alt="Carrusel">
+        </div> `
        
     }
     document.getElementById("productImages").innerHTML = htmlContentToAppend;
 }
+
 function mostrarEstrellitas(nroEstrellasMarcadas) {
     var estrellitas = "";
 
@@ -69,8 +80,27 @@ function enviarComentario(e) {
     comentarios.push(comentario)
     showComments(comentarios);
     return false;
-}
 
+}
+function showRelatedProducts() {
+let showRelatedProduct = "";
+           
+           for (let product of category.relatedProducts) {
+            showRelatedProduct += `     
+            <div onclick= setCatID(${product.id}) class=" card col-sm-3 cursor-active">
+                <img src="${product.image}" alt="img" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">${product.name} </p> 
+        </div>
+        </div> 
+        <br> 
+       `
+    
+            document.getElementById("relatedProducts").innerHTML = showRelatedProduct;
+        
+}
+}
+    
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -86,14 +116,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let categoryDescriptionHTML = document.getElementById("categoryDescription");
             let productCountHTML = document.getElementById("productCount");
             let productCriteriaHTML = document.getElementById("productCriteria");
+            let relatedProductsHTML = document.getElementById("relatedProducts");
 
             categoryNameHTML.innerHTML = category.name;
             categoryDescriptionHTML.innerHTML = category.description;
             productCountHTML.innerHTML = category.soldCount;
             productCriteriaHTML.innerHTML = category.category;
-
-           
+            relatedProductsHTML.innerHTML = category.relatedProducts;
             showImages(category.images);
+            showRelatedProducts (category.relatedProducts);
 
 
 
@@ -103,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
             comentarios = resultComm.data;
             showComments(comentarios);
         }
-    });
 
-        }
-    })})
+       
+    })}})})

@@ -320,20 +320,33 @@ dt {
       width: 10%;  
     }
     #productImages  {
-      width: 20%;  
-      content: "";
-      clear: both;
-      display: table;
-      margin-bottom: 0px;
-    }
+      width: 60%;  
+      }
   
 #comentario {
-  margin-top: 5px;
+ 
   width: 50%;  
+}
+#coment {
+  margin-top: 500px;
+  
 }
 
 .Volver {
   font-family: 'Raleway', serif !important; 
   margin: auto;
   margin-left: 500px;
+}
+
+#relatedProducts {
+  margin-top: 20px;
+  width: 80%;  
+  margin-bottom: 80px;
+}
+
+.carousel-inner .carousel-item {
+ transition: 100ms;
+}
+.carousel_slide {
+ transition: 100ms;
 }
