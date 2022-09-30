@@ -1,18 +1,11 @@
 var product = {};
-let id2 = localStorage.getItem('catID');
+let idProd = localStorage.getItem('catID');
 let comentarios;
 
-
-
-function getCatID(id2) {
-    localStorage.getItem("prodID", id2);
+function setCatID(id) {
+    localStorage.setItem("catID", id);
     window.location = "products.html"
 }
-function setCatID(prodID) {
-    localStorage.setItem("catID", prodID);
-    window.location = "products-info.html"
-}
-
 
 function showImages(array) {
 
@@ -28,7 +21,7 @@ function showImages(array) {
             else activar ="";
 
         htmlContentToAppend += ` <div class="carousel-item ` +activar+ ` " >
-        <img src="` + imageSrc + `" class="d-block w-100" alt="Carrusel">
+        <img src="` + imageSrc + `" class="d-block w-100"  alt="Carrusel">
         </div> `
        
     }
@@ -80,27 +73,25 @@ function enviarComentario(e) {
     comentarios.push(comentario)
     showComments(comentarios);
     return false;
-
 }
 function showRelatedProducts() {
-let showRelatedProduct = "";
-           
-           for (let product of category.relatedProducts) {
-            showRelatedProduct += `     
-            <div onclick= setCatID(${product.id}) class=" card col-sm-3 cursor-active">
-                <img src="${product.image}" alt="img" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">${product.name} </p> 
-        </div>
-        </div> 
-        <br> 
-       `
-    
-            document.getElementById("relatedProducts").innerHTML = showRelatedProduct;
+    let showRelatedProduct = "";
+               
+               for (let product of category.relatedProducts) {
+                showRelatedProduct += `     
+                <div onclick= setCatID(${product.id}) class=" card col-sm-3 cursor-active">
+                    <img src="${product.image}" alt="img" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">${product.name} </p> 
+            </div>
+            </div> 
+            <br> 
+           `
         
-}
-}
-    
+                document.getElementById("relatedProducts").innerHTML = showRelatedProduct;
+            
+    }
+    }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -122,10 +113,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
             categoryDescriptionHTML.innerHTML = category.description;
             productCountHTML.innerHTML = category.soldCount;
             productCriteriaHTML.innerHTML = category.category;
-            relatedProductsHTML.innerHTML = category.relatedProducts;
+
+           
             showImages(category.images);
             showRelatedProducts (category.relatedProducts);
-
 
 
     getJSONData(PRODUCT_INFO_COMMENTS_URL+localStorage.getItem('catID')+EXT_TYPE).then(function (resultComm) {
@@ -134,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             comentarios = resultComm.data;
             showComments(comentarios);
         }
+    });
 
-       
-    })}})})
+        }
+    })})

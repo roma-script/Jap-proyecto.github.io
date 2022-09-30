@@ -321,32 +321,42 @@ dt {
     }
     #productImages  {
       width: 60%;  
-      }
-  
-#comentario {
+      transition: 100ms;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
  
-  width: 50%;  
-}
-#coment {
-  margin-top: 500px;
+    #formulariocomentario {
+      font-family: 'Raleway', serif !important; 
+      border-radius: 2px;
+      border-color: #0087F7;
+      padding: 8px;
+      }
+      #stars {
+        width: 10%;  
+      }
+      
+    
+  #comentario {
+   
+    width: 50%;  
+     margin-top: 20px;
+  }
+  #coment {
+    margin-top: 500px;
+    
+  }
   
-}
-
-.Volver {
-  font-family: 'Raleway', serif !important; 
-  margin: auto;
-  margin-left: 500px;
-}
-
-#relatedProducts {
-  margin-top: 20px;
-  width: 80%;  
-  margin-bottom: 80px;
-}
-
-.carousel-inner .carousel-item {
- transition: 100ms;
-}
-.carousel_slide {
- transition: 100ms;
-}
+  .Volver {
+    font-family: 'Raleway', serif !important; 
+    margin: auto;
+    margin-left: 500px;
+  }
+  
+  #relatedProducts {
+    margin-top: 20px;
+    width: 80%;  
+    margin-bottom: 80px;
+  }
+  
+ 

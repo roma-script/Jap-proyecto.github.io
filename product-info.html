@@ -31,25 +31,18 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="botonUser" data-bs-toggle="dropdown" aria-expanded="false"> </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="cart.html">Mi Carrito</a></li>
-                <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
-                <li><a class="dropdown-item" href="index.html">Cerrar Sesión</a></li>
-              </ul>
-            </div>
+            <a class="nav-link" href="my-profile.html" id="botonUser"> </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main style="background-color: rgba(255, 255, 255, 0.5)">
-    
+
     <h2 style="font-weight: bold;" id="categoryName"></h2>
     <hr class="my-3" style="background-color: #0087F7">
     <dl>
-      
+
       <dt> Descripción</dt>
       <dd>
         <p id="categoryDescription"></p>
@@ -67,88 +60,78 @@
 
       <dt>Imágenes ilustrativas</dt>
       <dd>
-        <div id="carouselExampleControls">
+        <div id="maincarousel">
          
 
-            <div  class="carousel slide" data-bs-ride="carousel" class="carousel slide" data-interval="1000"  id="productImages">
-                      
-          
-          </div>
+          <div  class="carousel slide" data-bs-ride="carousel" data-interval="1000"  id="productImages">
+                    
+        
         </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-       
-  </div>
-  </dd>
-  </dl>
+      </div>
+  
+</dd>
+</dl>
 
 
 
-    <div id="coment">
+<div id="coment">
   <dt>Comentarios</dt>
     <dd>
           <p id="comentario"></p>
-  </div>
-</div>
-  </dd>
+    </dd>
   </dl>
+</div>
+</div>
+    <dt> <i class="fas fa-pencil-alt prefix" style="color:#0087F7"></i> Comentar</dt>
+    <dd>
+      <p> Déjanos tu opinión</p>
+    </dd>
+    <dd>
 
+      <form action="" id="formulariocomentar" onsubmit="return enviarComentario(this)">
+        <textarea style="border:#0087F7; border-width:2px; border-style:solid;" name="opinion" rows="10" cols="76"
+          placeholder="Escribe un comentario"></textarea>
+        <br>
+        <p>Tu puntuación</p>
+        <select name="estrellitas" id="estrellitas">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
 
-  <dt>    <i class="fas fa-pencil-alt prefix" style="color:#0087F7"></i> Comentar</dt> 
-  <dd>
-    <p> Déjanos tu opinión</p>
-  </dd>
-  <dd>
+        <br>
+        <br>
 
-    <form action="" id="formulariocomentar" onsubmit="return enviarComentario(this)">
-      <textarea style="border:#0087F7; border-width:2px; border-style:solid;" name="opinion" rows="10" cols="76" placeholder="Escribe un comentario"></textarea>
-      <br>
-      <p>Tu puntuación</p>
-      <select name="estrellitas" id="estrellitas">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
+        <input class="btn btn-primary" type="submit" onclick="submit" />
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            let formulario = document.getElementById('formulariocomentar');
+            formulario.addEventListener('submit', function () {
+              formulario.reset();
+            });
+          });
+        </script>
+        <br>
+        <br>
+    <dt>Productos Relacionados</dt>
 
-      <br>
-      <br>
-
-      <input class="btn btn-primary" type="submit" onclick="submit" />
-      <script>
-  document.addEventListener('DOMContentLoaded', function(){
-    let formulario = document.getElementById('formulariocomentar');
-    formulario.addEventListener('submit', function() {
-      formulario.reset();
-    });
-  });
-</script>
-<br>
-<br>
-<dt>Productos Relacionados</dt>
-   
-      <div class="row" id="relatedProducts">
-      </div>
+    <div class="row" id="relatedProducts">
+    </div>
     </dd>
     </dl>
 
-  </div>
-  <form>
-  <a class="btn btn-primary"  onclick="window.location.href='categories.html'" style="  margin-left: 600px">  Volver a Categorías </a>
-
-</form>
-</main>
-</footer>
-<div id="spinner-wrapper">
     </div>
+    <hr class="my-3" style="background-color: #0087F7">
+    <form>
+      <a class="btn btn-primary" onclick="window.location.href='categories.html'" style="  margin-left: 600px"> Volver a
+        Categorías </a>
+    </form>
+  </main>
+  </footer>
+  <div id="spinner-wrapper">
+  </div>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -171,7 +154,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
- 
+  <script src="js/products.js"></script>
 </body>
 
 </html>
