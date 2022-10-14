@@ -360,3 +360,104 @@ dt {
   }
   
  
+#articulos {
+  font-family: 'Raleway', serif !important; 
+  font-size: 20px;
+    margin: auto;
+    margin-left: 100px;
+    margin-bottom: -15px;
+    
+}
+
+#carrito {
+  font-family: 'Raleway', serif !important; 
+  font-weight: light;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#tableShowProducts {
+  width: 60%;
+  font-family: 'Raleway', serif !important; 
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+#prueba1 {
+  width: 30%;
+  margin:auto;
+}
+#tipoEnvio {
+    width: 60%;
+    font-family: 'Raleway', serif !important; 
+    margin-left: 100px;
+    margin-top: 30px;
+    
+}
+#direcEnvio {
+    width: 100%;
+    font-family: 'Raleway', serif !important; 
+    margin-left: 0px;
+    margin-top: 30px;
+    
+}
+
+
+
+.two-col {
+  overflow: hidden;/* Makes this div contain its floats */
+}
+
+.two-col .col1 {
+
+  width: 55%;
+  float: left;
+  
+}
+
+
+.two-col .col2 {
+  float: right;
+  width: 40%;
+  margin-bottom: 20px
+  
+}
+
+.two-col label {
+  display: block;
+}
+
+/* General button style (reset) */
+#botonComprar {
+	border: none;
+	font-family: 'Raleway', serif !important; 
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 1100px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+  background: #0087F7;
+	color: #fff;
+	height: 50px;
+	min-width: 160px;
+	line-height: 24px;
+	font-size: 16px;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
