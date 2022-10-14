@@ -1,8 +1,11 @@
 var cartResult = [];
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.document.addEventListener("DOMContentLoaded", function (e) {
-    function showCart() {
+   
+
+function showCart() {
         htmlContentToAppend = "";
     
         for (let i = 0; i < cartResult.articles.length; i++) {
@@ -41,7 +44,7 @@ var cartResult = [];
             }
         }
 
-    function addToCart (this) {
+    function addToCart () {
     var result = confirm("¿Añadir este producto al carrito de la compra?");
 				if (result == false){
 					return;
