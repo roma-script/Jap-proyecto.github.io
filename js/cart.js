@@ -1,9 +1,10 @@
+let user_id = "25801";
 var cartResult = [];
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.document.addEventListener("DOMContentLoaded", function (e) {
-   
+
 
 function showCart() {
         htmlContentToAppend = "";
@@ -44,30 +45,21 @@ function showCart() {
             }
         }
 
-    function addToCart () {
-    var result = confirm("¿Añadir este producto al carrito de la compra?");
-				if (result == false){
-					return;
-				}
-				// Formulario de carrito de compras
-				var obj = {
-                    id: this.localStorage.setItem("catID", id),
-                    image: this.image,
-                    name: this.name,
-                    unitCost: this.unitCost,
-                }
+        function addToCart() {
+            if (localStorage.getItem("newToCart") !== undefined) {
+                console.log("ok")
+                cartResult.push(JSON.parse(localStorage.getItem("newToCart"))
+                );
+            } 
+        } 
             
-                cartResult.push(obj)
-                showProducts(cartResult);
-           
-                }
-            
-    getJSONData(CART_INFO_URL+25801+EXT_TYPE).then(function (resultCart) {
+    getJSONData(CART_INFO_URL+user_id+EXT_TYPE).then(function (resultCart) {
         if (resultCart.status === "ok") {
 
             cartResult = resultCart.data;
-
-            showCart(cartResult);
+          
+   
+            showCart()
 
           
         }})

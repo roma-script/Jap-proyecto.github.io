@@ -1,11 +1,7 @@
 var product = {};
-let idProd = localStorage.getItem('catID');
+
 let comentarios;
 
-function setCatID(id) {
-    localStorage.setItem("catID", id);
-    window.location = "products.html"
-}
 
 function showImages(array) {
 
@@ -92,13 +88,30 @@ function showRelatedProducts() {
             
     }
     }
+
+     /*Entrega 5 add to cart */
+
+     function addToCart () {
+        let newItem = {
+            "id": product.id,
+            "name": product.name,
+            "count": 1,
+            "unitCost": product.cost,
+            "currency": product.currency,
+            "image": product.image,
+        };
+    
+        localStorage.setItem("newToCart", JSON.stringify(newItem));
+    
+        window.location.href = "cart.html";
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
-    getJSONData(PRODUCT_INFO_URL+localStorage.getItem('catID')+EXT_TYPE).then(function (resultObj) {
+    getJSONData(PRODUCT_INFO_URL+localStorage.getItem('catID', id1)+EXT_TYPE).then(function (resultObj) {
         if (resultObj.status === "ok") {
 
             category = resultObj.data;
@@ -129,3 +142,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         }
     })})
+
+   
