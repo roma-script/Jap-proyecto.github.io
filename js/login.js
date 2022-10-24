@@ -1,3 +1,5 @@
+let user_id = "25801";
+
 document.addEventListener("DOMContentLoaded", function(e){
 
 
@@ -17,7 +19,18 @@ function redirigir() {
   var usuario = document.getElementById("usuario").value;
      var contraseña = document.getElementById('contraseña').value;
      localStorage.setItem("dataLogin", usuario);
-
+     console.log ((CART_INFO_URL+user_id+EXT_TYPE))
+  getJSONData(CART_INFO_URL+user_id+EXT_TYPE).then(function (resultCart)
+     {
+      if (resultCart.status === "ok") {
+        localStorage.setItem("userCart", JSON.stringify(resultCart.data.articles));
+     
+        
+  
+         console.log(resultCart.data);
+  
+        
+      }})
    // Validar usuario
    if (usuario === "") { 
      alert("Debes ingresar un usuario");
@@ -31,6 +44,7 @@ function redirigir() {
    }   else {
    alert("Usuario creado con éxito");
    window.location.href = "inicio.html";
+   return false;
   }
 });
 

@@ -407,6 +407,7 @@ dt {
 
 
 
+
 .two-col {
   overflow: hidden;/* Makes this div contain its floats */
 }
@@ -461,3 +462,52 @@ dt {
 }
 
 
+span.bi.bi-trash::before {
+  color:red;
+  vertical-align:middle;
+  border: solid 2px red;
+  padding: 10px;
+ 
+}
+
+
+
+td {
+  vertical-align:middle;
+}
+
+#costos {
+  margin-left: 0px;
+  width: 97%;
+}
+
+
+p.text-muted {
+font-family: inherit;
+margin-right: 0%;
+}
+
+span#productCostText.text-muted {
+  text-align: left;
+  margin-right: 10px;
+}
+
+span#comissionText.text-muted {
+  text-align: left;
+  margin-right: 10px;
+}
+
+span#totalCostText {
+  font-size: large;
+}
+
+.list-group-item.d-flex.justify-content-between {
+  margin-right: 0%;
+}
+
+#botonComprar {
+margin-left: 450px;
+ padding: 8px 16px;
+ width: fit-content;
+  
+}

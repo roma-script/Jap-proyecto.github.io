@@ -92,18 +92,22 @@ function showRelatedProducts() {
      /*Entrega 5 add to cart */
 
      function addToCart () {
-        let newItem = {
-            "id": product.id,
-            "name": product.name,
-            "count": 1,
-            "unitCost": product.cost,
-            "currency": product.currency,
-            "image": product.image,
-        };
+        console.log(category)
+        var newItem = JSON.parse(localStorage.getItem("userCart"))
+       newItem.push({
+        count: 1,
+        currency: category.currency,
+        id: category.id,
+        image: category.images[0],
+        name: category.name,
+        unitCost: category.cost,
+
+       })
+           
+     
+        localStorage.setItem("userCart", JSON.stringify(newItem));
     
-        localStorage.setItem("newToCart", JSON.stringify(newItem));
-    
-        window.location.href = "cart.html";
+    //    window.location.href = "cart.html";
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -113,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     getJSONData(PRODUCT_INFO_URL+localStorage.getItem('catID', id1)+EXT_TYPE).then(function (resultObj) {
         if (resultObj.status === "ok") {
+            console.log(resultObj)
 
             category = resultObj.data;
 
