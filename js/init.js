@@ -60,3 +60,4 @@ function cerrarSesion() {
   localStorage.removeItem("dataLogin")
   window.location.href = "login.html";
 }
+

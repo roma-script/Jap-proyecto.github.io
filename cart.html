@@ -68,39 +68,50 @@
     </table>
     <hr class="mb-4" style="width: 80%; margin-left:100px; color: #0087F7; border: solid 1px">
       <h5 class="mb-3" id="tipoEnvio"> Tipo de envio</h5>
-      <form>
-        <div class="d-block my-3"  id="tipoEnvio">
-          <div class="custom-control custom-radio">
-            <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked=""
-              required="">
-            <label class="custom-control-label" for="goldradio">Premium 2 a 5 dias (15%)</label>
+      <form id="datosUsuario"  onsubmit="return submitForm()" method="post">
+       
+        <div class="d-block my-3"  id="radioEnvio">
+           <div class="form-check">
+            <input id="goldradio" name="group" type="radio"  class="form-check-input" checked  value='15'/>
+            <label class="form-check-label" for="goldradio">Premium 2 a 5 dias (15%)</label>
           </div>
-          <div class="custom-control custom-radio">
-            <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="premiumradio">Express 5 a 8 dias (7%)</label>
+          <div class="form-check">
+            <input id="premiumradio" name="group" type="radio" class="form-check-input" value='7'/>
+            <label class="form-check-label" for="premiumradio">Express 5 a 8 dias (7%)</label>
           </div>
-          <div class="custom-control custom-radio">
-            <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="standardradio">Standard 12 a 15 dias (5%)</label>
+          <div class="form-check">
+            <input id="standardradio" name="group" type="radio" class="form-check-input" value='5' />
+            <label class="form-check-label" for="standardradio">Standard 12 a 15 dias (5%)</label>
           </div>
+        </div>
           
     </dl>
+    
     <dt id="direcEnvio">
-      <hr class="mb-4" style="width: 134%; color: #0087F7; border: solid 1px">
+      <hr class="mb-4" style="width: 96%; color: #0087F7; border: solid 1px">
       <h5 class="mb-3">Dirección de envio</h5>
       <div class="two-col">
         <div class="col1" >
-      <label for="field1">Calle</label>
-      <textarea class="form-control" id="envioCalle" name="envioCalle" rows="1" cols="1" placeholder="Escribe aquí tu calle de residencia" required></textarea>
+      <label for="envioCalle">Calle</label>
+      <textarea class="form-control" id="envioCalle" name="envioCalle" rows="1" cols="1" required placeholder="Escribe aquí tu calle de residencia" ></textarea>
+      <div class="invalid-feedback">
+        Debe ingresar una calle.
+      </div>
     </div>
     <div class="col2" style="margin-right: 30px;">
-      <label for="field2">Numero</label>
-      <textarea class="form-control" id="envioNumero"  name="envioNumero" rows="1" cols="1" required placeholder="Escribe aquí tu número de puerta"></textarea>
-    </div>   </div> 
+      <label for="envioNumero">Numero</label>
+      <textarea class="form-control" id="envioNumero"  name="envioNumero" rows="1" cols="1" required  style="width: 97%"  placeholder="Escribe aquí tu número de puerta" ></textarea>
+      <div class="invalid-feedback">
+        Debe ingresar un número de puerta.
+      </div>
+     </div>   </div> 
       <label>Esquina</label>
-      <textarea class="form-control" id="envioEsquina"  name="envioEsquina"  rows="1" style="width: 96.55%;" placeholder="Escribe aquí la esquina más cercana" required></textarea>
-    </dt>
-    <hr class="my-3" style="width: 134%; color: #0087F7;; border: solid 1px">
+      <textarea class="form-control" id="envioEsquina"  name="envioEsquina"  rows="1" style="width: 55%" required placeholder="Escribe aquí la esquina más cercana" ></textarea>
+      <div class="invalid-feedback">
+        Debe ingresar una esquina.
+      </div>
+     </dt>
+    <hr class="my-3" style="width: 87%; color: #0087F7;; border: solid 1px">
     
     <dt id="costos">
          <h5 class="mb-3" id="costos">Costos</h5>
@@ -125,53 +136,85 @@
 
         </li>
       </ul>
-      <hr class="my-3" style="width: 134%; color: #0087F7; border: solid 1px">
+       
+  </dt>
+      <hr class="my-3" style="width: 87%; color: #0087F7; border: solid 1px">
 
 
       <h5 class="mb-3" id="formaPago"> Forma de Pago</h5>
       <div> 
         <p style="font-weight: 400; display: inline-block"> No ha seleccionado</p>
-        <a data-target="#exampleModalCenter" data-toggle="modal" class="MainNavText" id="MainNavPay"  
-         style="font-weight: 400; display: inline-block; margin-left:30px"
-        href="#exampleModalCenter">Seleccionar </a>
-      </div>
+       
+       
+     <!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Seleccionar
+</button>
 
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle"> Forma de Pago/h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="custom-control custom-radio">
-                <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                <label class="custom-control-label" for="premiumradio">Tarjeta de crédito</label>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Forma de Pago</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <div class="custom-control custom-radio">
+          <input id="tarjetaCred" name="publicationType" type="radio" class="custom-control-input" checked>
+          <label class="custom-control-label" for="tarjetaCred">Tarjeta de crédito</label>
+          <hr>
+       
+      <div class="two-col">
+        <div class="col1" >
+      <label for="field1">Numero de tarjeta</label>
+      <textarea class="form-control" id="numeroTarjeta" name="numeroTarjeta" rows="1" cols="1" ></textarea>
+      <div class="invalid-feedback">
+        Debe ingresar un número de tarjeta.
+      </div>
+    </div>
+    
+    <div class="col2" style="margin-right: 20px;">
+      <label for="field2">Código de seguridad</label>
+      <textarea class="form-control" id="codSeguridad"  name="codSeguridad" rows="1" cols="1"   ></textarea>
+   
+    <div class="invalid-feedback">
+      Debe ingresar un número de tarjeta.
+    </div>  </div>
+     </div> 
+    <div>
+      <label for="field3">Vencimiento</label>
+      <textarea class="form-control" id="vencimientoTarj" name="vencimientoTarj" rows="1" cols="1" ></textarea>
+       <div class="invalid-feedback">
+      Debe ingresar un número de tarjeta.
+    </div></div>
+    <input id="transferencia" name="publicationType" type="radio" class="custom-control-input">
+  <label class="custom-control-label" for="transferencia" >Transferencia Bancaria</label>
+  <hr>
+  <div class="col" style="margin-right: 20px;">
+    <label for="field">Número de cuenta</label>
+    <textarea class="form-control" id="numCuenta"  name="numCuenta" rows="1" cols="1"></textarea>
+    <div class="invalid-feedback">
+      Debe ingresar un número de cuenta.
+    </div> 
+  </div> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
  
-      <button class="btn btn-primary btn-lg"  id= "botonComprar" type="submit" onclick="validarCompra()"> Finalizar la compra </button>
-      
-  </dt>
-
-
-
+      </div>
+    </div>
   </div>
+</div>
+</div>
+ 
 
-  <div class="alert fade" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-   </main>
+  <button class="btn btn-primary"  id= "botonComprar"  style="margin-left: 450px" onclick="validateForm()"> Finalizar la compra </button>
+
+</form>      
+ 
+</main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

@@ -107,7 +107,7 @@ function showRelatedProducts() {
      
         localStorage.setItem("userCart", JSON.stringify(newItem));
     
-    //    window.location.href = "cart.html";
+       window.location.href = "cart.html";
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
