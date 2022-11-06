@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;>
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -68,19 +68,19 @@
     </table>
     <hr class="mb-4" style="width: 80%; margin-left:100px; color: #0087F7; border: solid 1px">
       <h5 class="mb-3" id="tipoEnvio"> Tipo de envio</h5>
-      <form id="datosUsuario"  onsubmit="return submitForm()" method="post">
+      <form id="datosUsuario"  method="post">
        
         <div class="d-block my-3"  id="radioEnvio">
            <div class="form-check">
-            <input id="goldradio" name="group" type="radio"  class="form-check-input" checked  value='15'/>
+            <input id="goldradio" name="group" type="radio"  class="form-check-input"  value='15' required/>
             <label class="form-check-label" for="goldradio">Premium 2 a 5 dias (15%)</label>
           </div>
           <div class="form-check">
-            <input id="premiumradio" name="group" type="radio" class="form-check-input" value='7'/>
+            <input id="premiumradio" name="group" type="radio" class="form-check-input" value='7' required />
             <label class="form-check-label" for="premiumradio">Express 5 a 8 dias (7%)</label>
           </div>
           <div class="form-check">
-            <input id="standardradio" name="group" type="radio" class="form-check-input" value='5' />
+            <input id="standardradio" name="group" type="radio" class="form-check-input" value='5' required/>
             <label class="form-check-label" for="standardradio">Standard 12 a 15 dias (5%)</label>
           </div>
         </div>
@@ -169,7 +169,7 @@
       <div class="two-col">
         <div class="col1" >
       <label for="field1">Numero de tarjeta</label>
-      <textarea class="form-control" id="numeroTarjeta" name="numeroTarjeta" rows="1" cols="1" ></textarea>
+      <textarea class="form-control" id="numeroTarjeta" name="numeroTarjeta" pattern="[0-9]+" placeholder="1234 5678 9101 1121"rows="1" cols="1" ></textarea>
       <div class="invalid-feedback">
         Debe ingresar un número de tarjeta.
       </div>
@@ -177,24 +177,24 @@
     
     <div class="col2" style="margin-right: 20px;">
       <label for="field2">Código de seguridad</label>
-      <textarea class="form-control" id="codSeguridad"  name="codSeguridad" rows="1" cols="1"   ></textarea>
+      <textarea class="form-control" id="codSeguridad"  name="codSeguridad" pattern="[0-9]+" placeholder="***"rows="1" cols="1"   ></textarea>
    
     <div class="invalid-feedback">
-      Debe ingresar un número de tarjeta.
+      Debe ingresar un código de seguridad.
     </div>  </div>
      </div> 
     <div>
       <label for="field3">Vencimiento</label>
-      <textarea class="form-control" id="vencimientoTarj" name="vencimientoTarj" rows="1" cols="1" ></textarea>
+      <textarea class="form-control" id="vencimientoTarj" name="vencimientoTarj" placeholder="mm/aaaa" rows="1" cols="1" ></textarea>
        <div class="invalid-feedback">
-      Debe ingresar un número de tarjeta.
+      Debe ingresar una fecha de vencimiento.
     </div></div>
     <input id="transferencia" name="publicationType" type="radio" class="custom-control-input">
   <label class="custom-control-label" for="transferencia" >Transferencia Bancaria</label>
   <hr>
   <div class="col" style="margin-right: 20px;">
     <label for="field">Número de cuenta</label>
-    <textarea class="form-control" id="numCuenta"  name="numCuenta" rows="1" cols="1"></textarea>
+    <input class="form-control" id="numCuenta"  name="numCuenta" placeholder="Escriba su número de cuenta" pattern="[0-9]+" rows="1" cols="1"></input>
     <div class="invalid-feedback">
       Debe ingresar un número de cuenta.
     </div> 

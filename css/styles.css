@@ -22,6 +22,10 @@ nav a {
   user-select: none;
 }
 
+body {
+  background-color:  rgb(248, 249, 250);
+}
+
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
@@ -518,21 +522,29 @@ span#totalCostText {
 #transferencia {
   margin-top: 40px;
  
-
-}
-small {
-  visibility: hidden;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 
-.form-control.success  textarea{
-  border-color: #2ecc71;
-  visibility: visible;
+#imagenPerfil 
+{
+    position: absolute;
+    right: 138px;
+    width: 10%;
+    top: 50px;
 }
 
-.form-control.error textarea {
-  border-color: red;
-  visibility: visible;
+footer.text-muted {
+  background-color:  rgb(248, 249, 250);
+  margin: 0 !important;
+  
+}
+
+#titleProfile {
+ margin-top: 30px;
+}
+
+input, select {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+         
 }

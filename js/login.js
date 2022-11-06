@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     
 });
-
+//Dato usuario
 function DataLogin() {
   var DataLogin = [];
 }
@@ -14,7 +14,7 @@ function DataLogin() {
 document.getElementById("login-form-submit").addEventListener("click",
  
 
-
+//Redirige y guarda el carrito en el perfil
 function redirigir() {
   var usuario = document.getElementById("usuario").value;
      var contraseña = document.getElementById('contraseña').value;

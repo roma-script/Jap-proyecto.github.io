@@ -9,7 +9,7 @@ let id1 = localStorage.getItem('catID')
 var buscar = undefined;
 
 
-
+//Función para ordenar productos
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_PRICE)
@@ -42,7 +42,7 @@ function setCatID(id1) {
     localStorage.setItem("catID", id1);
     window.location = "product-info.html"
 }
-
+//Muestra lista de productos asociados a la categoría
 function showProductsList(){
 
     let htmlContentToAppend = "";
@@ -74,7 +74,7 @@ function showProductsList(){
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
 }
-
+//Muestra productos según cruterio establecido
 function sortAndShowProducts(sortCriteria, productsArray){
     currentSortCriteria = sortCriteria;
 
@@ -84,7 +84,7 @@ function sortAndShowProducts(sortCriteria, productsArray){
 
     currentProductsArray = sortProducts(currentSortCriteria, currentProductsArray);
 
-    //Muestro las categorías ordenadas
+    //Muestra las categorías ordenadas
     showProductsList();
 }
 
@@ -141,7 +141,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         else{
             maxCount = undefined;
         }
-
+    
+        //Muestra lista de procutos cuando se busca en el searchForm
         showProductsList();
          });
 
