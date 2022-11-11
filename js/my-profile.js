@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
    
-    mostarDatos();
+    mostrarDatos();
 
     
 });
@@ -12,51 +12,26 @@ document.getElementById("userEmail").value = emailInput;
 
 function reemplazarFoto() {
 
+var foto = document.getElementById("imagenPerfil");
+var reemplazo =  document.getElementById("newProfilePic");
+
+
 }
-
-
-
-
-function mostarDatos() {
-
-    var perfil = JSON.parse(localStorage.getItem("myProfile"));
-    if (document.getElementById("usuario").value != null) {
-        document.getElementById("usuario").value = localStorage.getItem("dataLogin");
-        document.getElementById("profilePic").innerHTML = localStorage.getItem("Foto");
-        
-
-    
-}}
-
-
-
-
-
-
-  // Obtener info perfil
-    document.getElementById("primerNombre").value = perfil.primerNombre;
-    document.getElementById("segundoNombre").value = perfil.segundoNombre;
-    document.getElementById("primerApellido").value = perfil.primerApellido;
-    document.getElementById("segundoApellido").value = perfil.segundoApellido;
-    document.getElementById("userEmail").value = perfil.userEmail;
-    document.getElementById("telefono").value = perfil.telefono;
-
-
-    // Poner info en el perfil
-    document.getElementById("primerNombre").innerHTML = perfil.primerNombre;
-    document.getElementById("segundoNombre").innerHTML = perfil.segundoNombre;
-    document.getElementById("primerApellido").innerHTML = perfil.primerApellido;
-    document.getElementById("segundoApellido").innerHTML = perfil.segundoApellido;
-    document.getElementById("userEmail").innerHTML =  perfil.userEmail;
-    document.getElementById("telefono").innerHTML = perfil.telefono;
-    
-    
-
-
 
 function guardarCambios() {
 
+  // Obtener datos
+ 
+    const form = document.getElementById("formularioPerfil");
+    const primerNombre = document.getElementById("primerNombre");
+    const primerApellido = document.getElementById("primerApellido");
+    const userEmail = document.getElementById("userEmail");
+    const alert1 = document.getElementById("nombreAlert");
+    const alert2 = document.getElementById("apellidoAlert");
+    const alert3 = document.getElementById("emailAlert");
 
+
+    
     var user = {
 
         primerNombre: primerNombre.value,
@@ -67,23 +42,46 @@ function guardarCambios() {
         telefono: telefono.value,
 
     };
+    primerNombre.value.trim();
+    primerApellido.value.trim();
+    userEmail.value.trim();
 
-    localStorage.setItem("myProfile", JSON.stringify(user));
+   // Validar
+    if (primerNombre.value === "") {
+      alert1.style.visibility = "visible";
+      
+    } 
+    if (primerApellido.value === "") {
+        alert2.style.visibility = "visible";
+        
+    }
+    if (userEmail.value === "") {
+        alert3.style.visibility = "visible";
+    }
+    else {
+       
+        localStorage.setItem("myProfile", JSON.stringify(user));
+
+        var perfil = JSON.parse(localStorage.getItem("myProfile"));
+    
+        document.getElementById("userEmail").value = perfil.userEmail;
+
+}}
+
+
+function mostrarDatos() {
 
     var perfil = JSON.parse(localStorage.getItem("myProfile"));
-
-    document.getElementById("userEmail").value = perfil.userEmail;
-
- 
- 
-    if (primerNombre === '') {
-        return false
-    }
-    else if (primerApellido === '') {
-        return false;
-    }
-    else if (Email === '') {
-        return false
-    }
-
+      
+      // Poner info en el perfil
+    document.getElementById("primerNombre").innerHTML = perfil.primerNombre;
+    document.getElementById("segundoNombre").innerHTML = perfil.segundoNombre;
+    document.getElementById("primerApellido").innerHTML = perfil.primerApellido;
+    document.getElementById("segundoApellido").innerHTML = perfil.segundoApellido;
+    document.getElementById("userEmail").innerHTML =  perfil.userEmail;
+    document.getElementById("telefono").innerHTML = perfil.telefono;
+    
+    
+    
 }
+
