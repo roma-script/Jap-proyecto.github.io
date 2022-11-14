@@ -8,7 +8,7 @@ let cartUser = "";
 
 document.addEventListener("DOMContentLoaded", function(e){
     var emailInput= localStorage.getItem("dataLogin");
-
+//Debes estar logueado para acceder a esta página
     if (!emailInput) {
         window.location = "index.html"
         

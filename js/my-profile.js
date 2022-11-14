@@ -11,58 +11,58 @@ var emailInput= localStorage.getItem("dataLogin");
 document.getElementById("userEmail").value = emailInput;
 
 
-
+//Debes estar logueado para acceder a esta página
     if (!emailInput) {
       window.location = "index.html"
       
         }
 
 
+//Reemplazar foto: obtener imagen en Base64 y proceder a reemplazar
 
+        const input = document.getElementById("newProfilePic");
 
-function reemplazarFoto() {
-const input = document.getElementById("newProfilePic");
-const textArea = document.getElementById("imagenPerfil");
-
-const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(file);
-
-        fileReader.onload = () => {
-            resolve(fileReader.result);
+        const convertBase64 = (file) => {
+            return new Promise((resolve, reject) => {
+                const fileReader = new FileReader();
+                fileReader.readAsDataURL(file);
+        
+                fileReader.onload = () => {
+                    resolve(fileReader.result);
+                };
+        
+                fileReader.onerror = (error) => {
+                    reject(error);
+                };
+            });
         };
-
-        fileReader.onerror = (error) => {
-            reject(error);
+        
+        const uploadImage = async (event) => {
+            const file = event.target.files[0];
+            const base64 = await convertBase64(file);
+            console.log(base64)
         };
-    });
-};
+        
+        function reemplazarFoto(e){
+            var reemplazo = "";
 
-const uploadImage = async (event) => {
-    const file = event.target.files[0];
-    const base64 = await convertBase64(file);
-    textArea.innerText = base64;
-};
-
-input.addEventListener("change", (e) => {
-    uploadImage(e);
-});
-    var reemplazo = "";
-
-    if (localStorage.getItem("Foto") == null){ 
-    
-
-    var profilePic = document.getElementById("newProfilePic").file[0];
-
-    reemplazo = `<div id="imagenPerfil"> ` + profilePic + ` " alt="" border="0" heigth="200px" width="200px"></div>`
-
-    localStorage.setItem("Foto", reemplazo);
-
-    htmlContentToAppend += ` <div id="imagenPerfil"> ` + profilePic + ` " alt="" border="0" heigth="200px" width="200px"></div>`
-
+            if (localStorage.getItem("Foto") == null){ 
+            
+        
+            var profilePic = document.getElementById("newProfilePic").value;
+        
+            reemplazo = `<div id="imagenPerfil"> ` + profilePic + ` " alt="" border="0" heigth="200px" width="200px"></div>`
+        
+            localStorage.setItem("Foto", reemplazo);
+        
+            htmlContentToAppend += ` <div id="imagenPerfil"> ` + profilePic + ` " alt="" border="0" heigth="200px" width="200px"></div>`
+        
+          
+        }
+            uploadImage(e);
+    }
   
-}}
+
 
 
 function guardarCambios() {
