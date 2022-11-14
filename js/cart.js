@@ -5,10 +5,14 @@ let PERCENTAGE_SYMBOL = '%';
 let DOLLAR_SYMBOL = "USD ";
 let cartUser = "";
 
+
 document.addEventListener("DOMContentLoaded", function(e){
-    var loginUser= localStorage.getItem("dataLogin");
-    if (loginUser === "") {
-    window.location.href = "index.html";
+    var emailInput= localStorage.getItem("dataLogin");
+
+    if (!emailInput) {
+        window.location = "index.html"
+        
+          
 }
 })
 //Elimina artículo del carrito

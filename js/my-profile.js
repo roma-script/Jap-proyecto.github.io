@@ -6,17 +6,64 @@ document.addEventListener("DOMContentLoaded", function (e) {
     
 });
 
+
 var emailInput= localStorage.getItem("dataLogin");
 document.getElementById("userEmail").value = emailInput;
 
 
+
+    if (!emailInput) {
+      window.location = "index.html"
+      
+        }
+
+
+
+
 function reemplazarFoto() {
+const input = document.getElementById("newProfilePic");
+const textArea = document.getElementById("imagenPerfil");
 
-var foto = document.getElementById("imagenPerfil");
-var reemplazo =  document.getElementById("newProfilePic");
+const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
 
+        fileReader.onload = () => {
+            resolve(fileReader.result);
+        };
 
-}
+        fileReader.onerror = (error) => {
+            reject(error);
+        };
+    });
+};
+
+const uploadImage = async (event) => {
+    const file = event.target.files[0];
+    const base64 = await convertBase64(file);
+    textArea.innerText = base64;
+};
+
+input.addEventListener("change", (e) => {
+    uploadImage(e);
+});
+    var reemplazo = "";
+
+    if (localStorage.getItem("Foto") == null){ 
+    
+
+    var profilePic = document.getElementById("newProfilePic").file[0];
+
+    reemplazo = `<div id="imagenPerfil"> ` + profilePic + ` " alt="" border="0" heigth="200px" width="200px"></div>`
+
+    localStorage.setItem("Foto", reemplazo);
+
+    htmlContentToAppend += ` <div id="imagenPerfil"> ` + profilePic + ` " alt="" border="0" heigth="200px" width="200px"></div>`
+
+  
+}}
+
 
 function guardarCambios() {
 
@@ -29,6 +76,7 @@ function guardarCambios() {
     const alert1 = document.getElementById("nombreAlert");
     const alert2 = document.getElementById("apellidoAlert");
     const alert3 = document.getElementById("emailAlert");
+    const Foto = document.getElementById("newProfilePic");
 
 
     
@@ -40,6 +88,7 @@ function guardarCambios() {
         segundoApellido: segundoApellido.value,
         userEmail: userEmail.value,
         telefono: telefono.value,
+        foto: Foto.value,
 
     };
     primerNombre.value.trim();
@@ -72,6 +121,8 @@ function guardarCambios() {
 function mostrarDatos() {
 
     var perfil = JSON.parse(localStorage.getItem("myProfile"));
+
+
       
       // Poner info en el perfil
     document.getElementById("primerNombre").innerHTML = perfil.primerNombre;
@@ -80,8 +131,7 @@ function mostrarDatos() {
     document.getElementById("segundoApellido").innerHTML = perfil.segundoApellido;
     document.getElementById("userEmail").innerHTML =  perfil.userEmail;
     document.getElementById("telefono").innerHTML = perfil.telefono;
-    
-    
+  
     
 }
 

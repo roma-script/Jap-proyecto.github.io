@@ -65,7 +65,9 @@
       <div id="titleProfile"> 
         <h2> Perfil </h2>
       </div>
-        <div   id="imagenPerfil"> <img src="img/img_perfil.png">
+        <div id="imagenPerfil">
+        <img src= "img/img_perfil.png">
+          
         </div>
 
         <hr class="mb-4" style="width: 98%; margin-top: 51px; color: #0087F7; border: solid 2px">
@@ -84,30 +86,34 @@
             <div class="row">
               
               <div class="col">Primer nombre
-                <textarea id="primerNombre" style= "width: 86%; height: 30%" type="text" class="form-control" placeholder="René" aria-label="primer nombre" required> </textarea> 
+              <textarea id="primerNombre" type="text" class="form-control" style="width: 86%; height: 30%" placeholder="René" aria-label="primer nombre" required></textarea> 
             
              <div class="text-danger" id="nombreAlert" style= "visibility:hidden">
               Debe ingresar su primer nombre.
             </div>
           </div>
-              <div class="col" style="margin-left: -25px"> Segundo nombre
-                <textarea  id="segundoNombre" style= "width: 86%; height: 30%; margin-left: 1px;"  type="text" class="form-control" placeholder="María" aria-label="segundo nombre">  </textarea>
+          
+              <div class="col" style="margin-left: -25px">Segundo nombre
+              <textarea id="segundoNombre" style="width: 86%; height: 30%; margin-left: 1px;" type="text" class="form-control" placeholder="María" aria-label="segundo nombre"></textarea>
               </div>
 
             <div class="row">
+
               <div class="col">Primer apellido
-                <textarea  id="primerApellido" type="text" class="form-control" style= "width: 90%; height: 30% " placeholder="González" required aria-label="primer apellido" > </textarea> 
-                 <div class="text-danger" id="apellidoAlert" style= "visibility:hidden">
-              Debe ingresar su primer apellido.
-            </div>
+                <textarea id="primerApellido" type="text" class="form-control" style="width: 90%; height: 30%" placeholder="Pérez" aria-label="primer nombre" required></textarea> 
+              
+               <div class="text-danger" id="apellidoAlert" style= "visibility:hidden">
+                Debe ingresar su primer apellido.
               </div>
+            </div>
 
               <div class="col"> Segundo apellido
-                <textarea  id="segundoApellido" type="text" class="form-control" style= "width: 90%; height: 30%" placeholder="García" aria-label="segundo apellido"> </textarea>
+                <textarea  id="segundoApellido" type="text" class="form-control" style= "width: 90%; height: 30%" placeholder="García" aria-label="segundo apellido"></textarea>
               </div>
             </div>
 
             <div class="row">
+
               <div class="col"> E-mail
                 <textarea  id="userEmail" type="text" class="form-control"  style= "width: 90%; height: 30%" aria-label="Email" required> </textarea>
                 <div class="text-danger" id="emailAlert" style= "visibility:hidden">
@@ -126,8 +132,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">  Teléfono de contacto
-            <textarea  id="telefono" style= "width: 88%; height: 30%"  type="number" class="form-control" placeholder="099123456" aria-label="teléfono"> </textarea> 
+          <div class="col"> Teléfono de contacto
+            <textarea id="telefono" style= "width: 88%; height: 30%"  type="number" class="form-control" placeholder="099123456" aria-label="teléfono"></textarea> 
           </div>
           <button class="btn btn-primary" style=" margin-top: 25px; width: 15%; height: fit-content; display: inline-block; margin-right: 390px;" 
           onclick="guardarCambios()">Guardar cambios</button>
